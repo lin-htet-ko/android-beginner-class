@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/android-beginner-class.iml" filepath="$PROJECT_DIR$/.idea/android-beginner-class.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Batch-1/kotlin/auth-form/auth-form.iml" filepath="$PROJECT_DIR$/Batch-1/kotlin/auth-form/auth-form.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Batch-1/kotlin/kotlin.iml" filepath="$PROJECT_DIR$/Batch-1/kotlin/kotlin.iml" />
+    </modules>
+  </component>
+</project>
