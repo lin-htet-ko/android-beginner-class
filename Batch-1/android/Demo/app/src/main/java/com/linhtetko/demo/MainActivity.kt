@@ -1,28 +1,43 @@
 package com.linhtetko.demo
 
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-
-/*
-    1 - Activity - UserInterface
-    2 - BroadcastReceiver
-    3 - Services
-    4 - Content Provider
- */
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 class MainActivity : AppCompatActivity() {
+
+    val blogs = listOf(
+        BlogItem(
+            img = R.drawable.placeholder_perceptual_standard,
+            title = "Air Balloon",
+            content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        ),
+        BlogItem(
+            img = R.drawable.placeholder_big_cat,
+            title = "Cutie Big Cat",
+            content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        ),
+        BlogItem(
+            img = R.drawable.placeholder_paris,
+            title = "Paris City",
+            content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        ),
+    )
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // View -> ViewGroup -> View, View, View
+        val rvBlogs = findViewById<RecyclerView>(R.id.rvMainBlogs)
+        rvBlogs.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+
+        val adapter = BlogAdapter(blogs)
+        rvBlogs.adapter = adapter
+
+        adapter.setNewItems(blogs.shuffled())
     }
 
-    fun clickMeClick(view: View) {
-        Toast.makeText(this, "User click button!", Toast.LENGTH_LONG).show()
-    }
 }
