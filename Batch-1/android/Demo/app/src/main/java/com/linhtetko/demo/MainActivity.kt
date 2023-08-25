@@ -1,28 +1,27 @@
 package com.linhtetko.demo
 
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-
-/*
-    1 - Activity - UserInterface
-    2 - BroadcastReceiver
-    3 - Services
-    4 - Content Provider
- */
+import androidx.appcompat.widget.Toolbar
 
 class MainActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // View -> ViewGroup -> View, View, View
+        val tbMain = findViewById<Toolbar>(R.id.tbMain)
+
+        setSupportActionBar(tbMain)
+        supportActionBar?.title = ""
     }
 
-    fun clickMeClick(view: View) {
-        Toast.makeText(this, "User click button!", Toast.LENGTH_LONG).show()
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_book_detail, menu)
+        return true
     }
 }

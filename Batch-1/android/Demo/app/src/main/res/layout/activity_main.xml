@@ -1,38 +1,579 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <ImageView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/img_hot_air_balloons" />
+        android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|start"
-        android:layout_margin="25dp"
-        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            app:navigationIcon="@drawable/baseline_arrow_back_24" />
+
+        <ImageView
+            android:id="@+id/ivBookImg"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/tbMain"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@null"
+            android:src="@drawable/book_image" />
 
         <TextView
+            android:id="@+id/tvBookName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:text="8:05 PM"
-            android:textColor="#fff"
-            android:letterSpacing="0.1"
-            android:textSize="40sp"/>
+            android:layout_alignTop="@id/ivBookImg"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@id/ivBookImg"
+            android:text="The PARA Method: Simplify, Organize, and Master Your Digital Life"
+            android:textColor="#000"
+            android:textSize="23sp"
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tvPublisher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:text="16th Wed 2023"
-            android:textColor="#fff"
-            android:textSize="35sp"
-            android:letterSpacing="0.1"/>
+            android:layout_below="@id/tvBookName"
+            android:layout_alignStart="@id/tvBookName"
+            android:layout_marginTop="10dp"
+            android:text="Tiago Forte"
+            android:textColor="#2196F3" />
 
-    </LinearLayout>
-</FrameLayout>
+        <TextView
+            android:id="@+id/tvAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvPublisher"
+            android:layout_alignStart="@id/tvPublisher"
+            android:layout_marginTop="5dp"
+            android:text="Simon and Schuster" />
+
+        <TextView
+            android:id="@+id/tvReleaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAuthor"
+            android:layout_alignStart="@id/tvAuthor"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/backgound_book_release_date"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:text="New - Aug 15"
+            android:textColor="#fff" />
+
+        <LinearLayout
+            android:id="@+id/llMainGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvReleaseDate"
+            android:layout_alignStart="@id/ivBookImg"
+            android:layout_alignEnd="@id/tvBookName"
+            android:layout_marginTop="25dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/baseline_star_24"
+                    android:drawablePadding="5dp"
+                    android:drawableTint="#717171"
+                    android:text="5.0"
+                    android:textColor="#717171"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableTint="#717171"
+                    android:text="2 reviews"
+                    android:textColor="#717171" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:background="#717171" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/outline_book_24"
+                    app:tint="#717171" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableTint="#717171"
+                    android:text="2 reviews"
+                    android:textColor="#717171" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:background="#717171" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:text="208"
+                    android:textColor="#717171"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableTint="#717171"
+                    android:text="pages"
+                    android:textColor="#717171" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:background="#717171" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/outline_local_library_24"
+                    app:tint="#717171" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableTint="#717171"
+                    android:text="Eligible"
+                    android:textColor="#717171" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llBtnActions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llMainGeneral"
+            android:layout_alignStart="@id/llMainGeneral"
+            android:layout_alignEnd="@id/llMainGeneral"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_btn_outlined">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Free Sample" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_btn_colored">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Buy"
+                    android:textColor="@color/white" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/vDivider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/llBtnActions"
+            android:layout_alignStart="@id/llBtnActions"
+            android:layout_alignEnd="@id/llBtnActions"
+            android:layout_marginTop="15dp"
+            android:background="#ddd" />
+
+        <TextView
+            android:id="@+id/tvMainAboutLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vDivider1"
+            android:layout_alignStart="@id/vDivider1"
+            android:layout_marginTop="10dp"
+            android:text="About this book"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/ivAboutForward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/tvMainAboutLabel"
+            android:layout_alignEnd="@id/vDivider1"
+            android:src="@drawable/baseline_arrow_forward_24"
+            app:tint="#2196F3" />
+
+        <TextView
+            android:id="@+id/ivAboutContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvMainAboutLabel"
+            android:layout_alignStart="@id/tvMainAboutLabel"
+            android:layout_alignEnd="@id/ivAboutForward"
+            android:layout_marginTop="10dp"
+            android:lineHeight="20dp"
+            android:maxLines="4"
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+
+        <TextView
+            android:id="@+id/tvMainRatingReviewLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivAboutContent"
+            android:layout_alignStart="@id/vDivider1"
+            android:layout_marginTop="10dp"
+            android:text="Ratings and reviews"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/ivRatingReviewForward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/tvMainRatingReviewLabel"
+            android:layout_alignEnd="@id/vDivider1"
+            android:src="@drawable/baseline_arrow_forward_24"
+            app:tint="#2196F3" />
+
+        <LinearLayout
+            android:id="@+id/llRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvMainRatingReviewLabel"
+            android:layout_alignStart="@id/tvMainRatingReviewLabel"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5.0"
+                android:textSize="40sp" />
+
+            <RatingBar
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="2 total" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMainRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/llRating"
+            android:layout_alignEnd="@id/ivRatingReviewForward"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/llRating"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    style="@style/Widget.Material3.LinearProgressIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressBackgroundTint="#2196F3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    style="@style/Widget.Material3.LinearProgressIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressBackgroundTint="#2196F3"
+                    android:progressTint="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    style="@style/Widget.Material3.LinearProgressIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressTint="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    style="@style/Widget.Material3.LinearProgressIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressTint="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    style="@style/Widget.Material3.LinearProgressIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressTint="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvAboutAuthorLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llRating"
+            android:layout_alignStart="@id/llRating"
+            android:layout_marginTop="10dp"
+            android:text="About the author"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/btnAboutForward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/tvAboutAuthorLabel"
+            android:layout_alignEnd="@id/llMainRating"
+            android:background="@android:color/transparent"
+            android:src="@drawable/baseline_arrow_forward_24"
+            android:tint="#2196F3" />
+
+        <TextView
+            android:id="@+id/tvAboutAuthorContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAboutAuthorLabel"
+            android:layout_alignStart="@id/tvAboutAuthorLabel"
+            android:layout_alignEnd="@id/btnAboutForward"
+            android:layout_marginTop="15dp"
+            android:lineHeight="25sp"
+            android:maxLines="4"
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+
+        <TextView
+            android:id="@+id/tvRateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginTop="15dp"
+            android:layout_alignStart="@id/tvAboutAuthorContent"
+            android:layout_below="@id/tvAboutAuthorContent"
+            android:text="Rate this book"/>
+
+        <TextView
+            android:id="@+id/tvUserThoughtLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Tell others what you think"
+            android:layout_alignStart="@id/tvRateLabel"
+            android:layout_below="@id/tvRateLabel"/>
+
+        <RatingBar
+            android:id="@+id/rbMainBig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvUserThoughtLabel"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:numStars="5" />
+
+        <FrameLayout
+            android:id="@+id/flWriteReview"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rbMainBig"
+            android:background="@drawable/background_btn_outlined">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="#2196F3"
+                android:layout_margin="10dp"
+                android:text="Write a review" />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/vDivider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ddd"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/flWriteReview"
+            />
+
+        <TextView
+            android:id="@+id/tvGooglePolicy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTint="#5D5D5D"
+            android:gravity="center_vertical"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_below="@id/vDivider2"
+            android:drawablePadding="20dp"
+            android:drawableStart="@drawable/outline_policy_24"
+            android:text="Google Play refund policy"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTint="#5D5D5D"
+            android:gravity="center_vertical"
+            android:layout_margin="15dp"
+            android:layout_below="@id/tvGooglePolicy"
+            android:drawablePadding="20dp"
+            android:drawableStart="@drawable/outline_help_center_24"
+            android:text="All prices include VAT."/>
+    </RelativeLayout>
+</ScrollView>
