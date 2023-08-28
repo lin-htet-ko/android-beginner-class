@@ -1,4 +1,5 @@
 package com.linhtetko.moviex.model.network
+package com.linhtetko.moviex.network
 
 object ApiConstant {
 
