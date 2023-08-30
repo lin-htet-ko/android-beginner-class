@@ -1,43 +1,38 @@
 package com.linhtetko.demo
 
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatEditText
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
+private const val TAG = "MainActivity"
+
 class MainActivity : AppCompatActivity() {
-
-    val blogs = listOf(
-        BlogItem(
-            img = R.drawable.placeholder_perceptual_standard,
-            title = "Air Balloon",
-            content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-        ),
-        BlogItem(
-            img = R.drawable.placeholder_big_cat,
-            title = "Cutie Big Cat",
-            content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-        ),
-        BlogItem(
-            img = R.drawable.placeholder_paris,
-            title = "Paris City",
-            content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-        ),
-    )
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rvBlogs = findViewById<RecyclerView>(R.id.rvMainBlogs)
-        rvBlogs.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        val etWord = findViewById<AppCompatEditText>(R.id.etWord)
+        val btnCheck = findViewById<AppCompatButton>(R.id.btnCheck)
+        val tvResult = findViewById<AppCompatTextView>(R.id.tvResult)
 
-        val adapter = BlogAdapter(blogs)
-        rvBlogs.adapter = adapter
+        btnCheck.setOnClickListener {
+            val word = etWord.text.toString()
 
-        adapter.setNewItems(blogs.shuffled())
+            if (word == word.reversed()){
+                tvResult.text = "Your Win"
+            }else{
+                tvResult.text = "Your Fail"
+            }
+        }
     }
+
 
 }
